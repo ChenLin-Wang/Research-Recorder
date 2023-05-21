@@ -10,7 +10,7 @@ QList<QVariant> traverseDirectory(const QString& rootDir);
 FileController::FileController() {
     worker->moveToThread(thread);
     connect(this, &FileController::startCopyFile, worker, &FileCopyWorker::copyFiles);
-    connect(worker, &FileCopyWorker::filepCopyFinished, this, &FileController::fileCopyDidFinish);
+    connect(worker, &FileCopyWorker::fileCopyFinished, this, &FileController::fileCopyDidFinish);
     connect(worker, &FileCopyWorker::newLog, this, &FileController::newLog);
 }
 
